@@ -13,6 +13,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// middleware for any requests made to the api
+routes.use(function(req, res, next) {
+    console.log('Something is happening.');
+    next(); // make sure we go to the next routes and don't stop here
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -21,10 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// register the routes
 app.use('/', routes);
-
-// var stream = require('stream');
-// stream.setName('Chelsea vs Liverpool');
-// console.log(stream.getInfo());
 
 module.exports = app;

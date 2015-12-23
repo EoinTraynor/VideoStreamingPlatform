@@ -1,7 +1,7 @@
 var name, catagory, subCatagory, private, sessionId, apiKey, token;
 
 exports.setName = function(nm){
-	name = nm;
+	name = 'nm';
 };
 // exports.setCatagory = function(ct){
 // 	catagory = ct;
@@ -24,7 +24,7 @@ exports.setName = function(nm){
 
 exports.getInfo = function() {
 		return {
-			name: name,
+			name: name
 			// catagory: catagory,
 			// subCatagory: subCatagory,
 			// private: private,
