@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var streams = require('../models/index');
+var stream = require('../models/index');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -42,10 +42,9 @@ router.post('/streams/:id', function(req, res){
     // create new stream & define attributes
     // add stream to array of streams
 
-    //var stream = new Stream();
-    //stream.name = req.body.name;
-
-
+    stream.setName('Liverpool');
+    console.log(stream.getInfo());
+    //res.json({ message: 'Create new stream!' });
 });
 
 /* DELETE a specific stream */
