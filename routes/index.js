@@ -53,5 +53,4 @@ router.delete('/streams/:id', function(req, res){
     res.json({ message: 'Delete specific stream!' });
 });
 
-
 module.exports = router;

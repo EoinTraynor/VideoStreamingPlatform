@@ -1,41 +1,5 @@
-// var sessionId, apiKey, token, name, catagory, subCatagory, private;
-//
-// exports.setSessionId = function(sid){
-// 	sessionId = sid;
-// };
-// exports.setApiKey = function(api){
-// 	apiKey = api;
-// };
-// exports.setToken = function(tk){
-// 	token = tk;
-// };
-// exports.setName = function(nm){
-// 	name = nm;
-// };
-// exports.setCatagory = function(ct){
-// 	catagory = ct;
-// };
-// exports.setSubCatagory = function(sct){
-// 	subCatagory = sct;
-// };
-// exports.setPrivate = function(pri){
-// 	private = pri;
-// };
-//
-// exports.getInfo = function() {
-// 		return {
-// 			sessionId: sessionId,
-// 			apiKey: apiKey,
-// 			token: token,
-// 			name: name,
-// 			catagory: catagory,
-// 			subCatagory: subCatagory,
-// 			private: private
-// 		};
-// };
-
-module.exports = function (info) {
-	var values = {
+var Stream = function () {
+	this.data = {
 			sessionId: null,
 			apiKey: null,
 			token: null,
@@ -45,9 +9,23 @@ module.exports = function (info) {
 			private: null
 	};
 
-	for(var prop in values){
-		if(values[prop] !== 'undefined'){
-			values[prop] = info[prop];
-		}
-	}
-}
+	this.fill = function (info) {
+			for(var prop in this.data) {
+				if(this.data[prop] !== 'undefined'){
+					this.data[prop] = info[prop];
+				}
+			}
+	};
+
+	this.getInformation = function () {
+		return this.data;
+	};
+};
+
+module.exports = function (info) {
+	var instance = new Stream();
+
+	instance.fill(info);
+
+	return instance;
+};

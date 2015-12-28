@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var stream = require('./models');
 
 var app = express();
 
@@ -29,5 +30,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // register the routes
 app.use('/', routes);
+
+var stream1 = {
+    sessionId: 1,
+    apiKey: 12,
+    token: 123,
+    name: 'stream1',
+    catagory: 'football',
+    subCatagory: 'sport',
+    private: 'true'
+};
+
+var st = stream(stream1);
+console.log(st.getInformation());
 
 module.exports = app;
