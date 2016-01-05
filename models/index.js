@@ -22,10 +22,19 @@ var streams = [
 	    "private": "false"
 	},
 	{
+		"sessionId": 212,
+	    "apiKey": 2384238979,
+	    "token": 8324453,
+	    "name": 'stream2',
+	    "catagory": "football",
+	    "subCatagory": "sport",
+	    "private": "false"
+	},
+	{
 		"sessionId": 33,
 	    "apiKey": 132048,
 	    "token": 132409,
-	    "name": 'stream2',
+	    "name": 'stream3',
 	    "catagory": "football",
 	    "subCatagory": "sport",
 	    "private": "false"
@@ -81,8 +90,8 @@ module.exports.newStream = function (info) {
 module.exports.deleteStream = function(id) {
 	for(var s in streams){
 		if (streams[s].sessionId == id) {
-			//result.push(streams[s]);
-			streams.splice(streams[s]);
+			console.log([s] + " " + streams[s].sessionId);
+			streams.splice(s, 1);
 		}
 	}
 }
