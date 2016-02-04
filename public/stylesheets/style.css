@@ -1,3 +1,31 @@
+body {
+    padding-top: 50px;
+}
+
+
+
+/*  NAVBARS */
+
+/* May have to specify height of a div*/
+
+
+/* Position elements in div*/
+.center-block {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+
+/* Sub-Nav*/
+/* Set text size*/
+#sub-nav h2{
+    font-size: 15px;
+}
+
+
+/*  MAIN CONTAINER */
 
 
 /* Small devices (tablets, 768px and up) */
