@@ -32,13 +32,14 @@ body {
     top: 5px;
 }
 
-.input-group {
+#main-nav .input-group {
     padding: 0px 10px;
+    max-width: 400px;
 }
 
 /* Sub-Nav*/
 /* Set text size*/
-#sub-nav h2{
+#sub-nav h2, .glyphicon{
     font-size: 15px;
 }
 
@@ -56,7 +57,30 @@ body {
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
+@media (max-width: 380px) {
+    /* Navbar */
+    #sub-nav {
+        min-height: 44px;
+    }
+
+    #sub-nav h2, .glyphicon {
+        font-size: 12px;
+    }
+
+    #sub-nav .glyphicon{
+        line-height: 43px;
+        top: 3px;
+    }
+}
+
+
+/* Small to medium devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    /* Navbar */
+    .input-group {
+        max-width: 420px;
+    }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) { ... }
