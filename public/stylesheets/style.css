@@ -1,5 +1,5 @@
 body {
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 
@@ -8,20 +8,47 @@ body {
 
 /* May have to specify height of a div*/
 
-
 /* Position elements in div*/
-.center-block {
-    display: inline-block;
-    vertical-align: middle;
+.center-children {
     text-align: center;
+
+}
+
+.center-me {
     margin: 0 auto;
+}
+
+#main-nav {
+    height: 65px;
+    line-height: 35px;
+    padding-top: 15px;
+}
+
+#nav-icon {
     float: none;
+}
+
+#nav-icon .glyphicon{
+    top: 5px;
+}
+
+.input-group {
+    padding: 0px 10px;
 }
 
 /* Sub-Nav*/
 /* Set text size*/
 #sub-nav h2{
     font-size: 15px;
+}
+
+#sub-nav {
+    min-height: 47px;
+}
+
+#sub-nav .glyphicon{
+    line-height: 46px;
+    top: 3px;
 }
 
 
