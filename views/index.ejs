@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>VideoStreamingPlatform</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
-<body>
+<body ng-app="streamApp">
 
 	<div class="navbar navbar-default navbar-fixed-top" id="main-nav" role="navigation">
 		<div class="container">
@@ -89,11 +90,29 @@
 		</div>
 	</div>
 
-	<main>
-		<div class="container">
-			
+	<main ng-controller="MainController">
+		<div class="search">
+			<div class="container">
+				<h2>Search Results</h2>
+				<table class="table table-hover">
+		  			<tbody>
+						<div class="stream" ng-repeat="stream in streams">
+							<tr>
+								<td>{{ stream }}</td>
+								<td>{{ streams[0] }}</td>
+							</tr>
+						</div>
+		  			</tbody>
+				</table>
+			</div>
 		</div>
 	</main>
 
+	<!-- Modules -->
+	<script type="text/javascript" src="javascripts/app.js"></script>
+	<!-- Controllers -->
+	<script type="text/javascript" src="javascripts/controllers/MainController.js"></script>
+	<!-- Services -->
+	<script type="text/javascript" src="javascripts/services/search.js"></script>
 </body>
 </html>
