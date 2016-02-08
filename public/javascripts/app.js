@@ -1,22 +1,17 @@
-var app = angular.module('streamApp', []);
+var app = angular.module('streamApp', ['ngRoute']);
 
-// app.config(function ($routeProvider) {
-// 	$routeProvider
-// 	.when('/', {
-// 		controller: HomeController
-// 		templateUrl: "../views/search.ejs"
-// 	})
-// 	.
-// });
-
-// function mainController($scope, $http) {
-// 	$scope.formData = {};
-//
-// 	$http.get('/streams').success(function(data){
-// 		$scope.streams = data;
-// 		console.log(data);
-// 	})
-// 	.error(function(data){
-// 		console.log('Error: ' + data);
-// 	});
-// };
+// routes config
+app.config(function ($routeProvider) {
+	$routeProvider
+	.when('/', {
+		controller: 'mainController',
+		templateUrl: 'templates/streams.html'
+	})
+	.when('/stream/:id', {
+		controller: 'streamController',
+		templateUrl: 'templates/stream.html'
+	})
+	.otherwise({
+      redirectTo: '/'
+    });
+});

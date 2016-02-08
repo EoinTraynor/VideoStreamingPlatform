@@ -3,6 +3,7 @@
 <head>
 	<title>VideoStreamingPlatform</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -65,54 +66,23 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<h1>Navbar Test</h1>
-		</div>
-	</div>
 
-	<div class="navbar navbar-default">
-		<div class="container">
-			<a href="#">Hi</a>
+	<!-- Main content and Injected Views -->
+	<main ng-controller="mainController">
+		<!-- angular templating -->
+		<!-- content views will be injected -->
+		<div class="ng-view"></div>
 
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse" type="button" name="button">
-				<span class="icon-option"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-
-			<div class="collapse navbar-collapse navHeaderCollapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Home</a></li>
-				</ul>
-
-			</div>
-		</div>
-	</div>
-
-	<main ng-controller="MainController">
-		<div class="search">
-			<div class="container">
-				<h2>Search Results</h2>
-				<table class="table table-hover">
-		  			<tbody>
-						<div class="stream" ng-repeat="stream in streams">
-							<tr>
-								<td>{{ stream }}</td>
-								<td>{{ streams[0] }}</td>
-							</tr>
-						</div>
-		  			</tbody>
-				</table>
-			</div>
-		</div>
 	</main>
 
 	<!-- Modules -->
 	<script type="text/javascript" src="javascripts/app.js"></script>
 	<!-- Controllers -->
-	<script type="text/javascript" src="javascripts/controllers/MainController.js"></script>
+	<!-- Handle the different application views -->
+	<script type="text/javascript" src="javascripts/controllers/mainController.js"></script>
+	<script type="text/javascript" src="javascripts/controllers/streamController.js"></script>
 	<!-- Services -->
+	<!-- Make the request to the server -->
 	<script type="text/javascript" src="javascripts/services/search.js"></script>
 </body>
 </html>
