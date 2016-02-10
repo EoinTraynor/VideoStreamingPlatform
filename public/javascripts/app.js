@@ -5,11 +5,11 @@ app.config(function ($routeProvider) {
 	$routeProvider
 	.when('/', {
 		controller: 'mainController',
-		templateUrl: 'templates/streams.html'
+		templateUrl: 'templates/streams.ejs'
 	})
 	.when('/stream/:id', {
 		controller: 'streamController',
-		templateUrl: 'templates/stream.html'
+		templateUrl: 'templates/stream.ejs'
 	})
 	.otherwise({
       redirectTo: '/'
