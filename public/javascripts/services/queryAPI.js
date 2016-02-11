@@ -1,11 +1,12 @@
 app.factory('streamFactory', ['$http', '$q', function($http, $q) {
-
+	var urlBase = '/streams'
 	var dataFactory = {};
 
 	dataFactory.getStreams = function () {
 		var defer = $q.defer();
 
-		$http.get('/streams').success(function (data) {
+		$http.get(urlBase)
+		.success(function (data) {
 			defer.resolve(data);
 		})
 		.error(function (err) {
@@ -13,26 +14,37 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		});
 
 		return defer.promise;
-	}
+	};
 
-	// return $http.get('/streams')
-	// .success(function(data){
-	// 	return data;
-	// 	console.log(data);
-	// })
-	// .error(function(err){
-	// 	return err;
-	// });
+	dataFactory.getStream = function (id){
+		var defer = $q.defer();
+
+		$http.get(urlBase + '/' + id)
+		.success(function (data) {
+			defer.resolve(data);
+		})
+		.error(function (err) {
+			defer.reject(err);
+		});
+
+		return defer.promise;
+	};
+
+	// dataFactory.getSearch = function functionName() {
+	//
+	// };
+	//
+	// dataFactory.getCatagory = function functionName() {
+	//
+	// };
+	//
+	// dataFactory.insertStream = function functionName() {
+	//
+	// };
+	//
+	// dataFactory.removeStream = function functionName() {
+	//
+	// };
 
 	return dataFactory;
 }]);
-
-
-// function streamFactory($scope, $http) {
-// 	var getStreams = function (cb, err){
-// 		return $http.get('/streams').then(cb, err);
-// 	};
-// 	return {getStreams: getStreams};
-// }
-//
-// app.factory('streamFactory', streamFactory);

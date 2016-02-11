@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
 		controller: 'mainController',
 		templateUrl: 'templates/streams.ejs'
 	})
-	.when('/stream/:id', {
+	.when('/streams/:id', {
 		controller: 'streamController',
 		templateUrl: 'templates/stream.ejs'
 	})

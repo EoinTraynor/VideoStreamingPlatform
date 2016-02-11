@@ -8,29 +8,51 @@ function mainController ($scope, streamFactory) {
 		$scope.status = err.message;
 	});
 
-	// streamFactory.success(function(data) {
-	// 	$scope.streams = data;
-	// });
+
+	$scope.getStream = function (id) {
+		streamFactory.getStream(id)
+		.then(function (data) {
+			$scope.stream = data;
+		})
+		.catch(function (err) {
+			$scope.status = err.message;
+		});
+
+	};
+
+	$scope.getSearch = function (query) {
+		streamFactory.getSearch(query)
+		.then(function (data) {
+			$scope.result = data;
+		})
+		.catch(function (err) {
+			$scope.status = err.message;
+		});
+	};
+
+	$scope.getCatagory = function (cat) {
+		streamFactory.getCatagory(cat)
+		.then(function (data) {
+			$scope.result = data;
+		})
+		.catch(function (err) {
+			$scope.status = err.message;
+		});
+	};
+
+	$scope.insertStream = function (strObj) {
+
+	};
+
+	$scope.removeStream = function (id) {
+		streamFactory.removeStream(id)
+		.then(function(data) {
+			$scope.result = data;
+		})
+		.catch(function(err) {
+			$scope.status = err.message;
+		});
+	};
 };
 
 app.controller('mainController', mainController);
-
-// use mainController controller here = https://github.com/JosephOR/AngularMovieSearch/blob/master/js/controllers/MovieController.js
-
-// function mainController($scope, streamFactory) {
-//
-// 	streamFactory.getStreams(function (data) {
-// 		$scope.streams = data;
-// 	},
-// 	function () {
-//
-// 	});
-//
-// 	$scope.getStream();
-// 	$scope.getSearch();
-// 	$scope.getCatagory();
-// 	$scope.postStream();
-// 	$scope.deleteStream();
-// }
-//
-// app.controller('mainController', mainController);
