@@ -30,9 +30,19 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		return defer.promise;
 	};
 
-	// dataFactory.getSearch = function functionName() {
-	//
-	// };
+	dataFactory.searchStreams = function (query){
+		var defer = $q.defer();
+		$http.get(urlBase + '/search/' + query)
+		.success(function (data) {
+			console.log(data);
+			defer.resolve(data);
+		})
+		.error(function (err) {
+			defer.reject(err);
+		});
+
+		return defer.promise;
+	};
 	//
 	// dataFactory.getCatagory = function functionName() {
 	//
