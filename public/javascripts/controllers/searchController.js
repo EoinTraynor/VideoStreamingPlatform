@@ -1,13 +1,12 @@
-function searchController ($scope, streamFactory) {
+function searchController ($scope, $routeParams, streamFactory) {
 	$scope.streams = {};
-	console.log('using searchController');
-	searchStreams();
+
+	searchStreams($routeParams.query);
 
 	// need to pass url:query
 	function searchStreams(query) {
-		streamFactory.searchStreams(query)
+		streamFactory.searchStreams($routeParams.query)
 		.then(function (data) {
-			console.log(data);
 			$scope.streams = data;
 		})
 		.catch(function (err) {

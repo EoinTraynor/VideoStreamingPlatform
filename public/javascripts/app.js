@@ -24,10 +24,10 @@ app.config(function ($routeProvider) {
 		templateUrl: 'templates/streams.ejs'
 	})
 	// posting to
-	.when('/streams', {
-		controller: 'searchController',
-		templateUrl: 'templates/streams.ejs'
-	})
+	// .when('/streams', {
+	// 	controller: 'searchController',
+	// 	templateUrl: 'templates/streams.ejs'
+	// })
 	.otherwise({
       redirectTo: '/'
     });

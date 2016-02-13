@@ -34,7 +34,6 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		var defer = $q.defer();
 		$http.get(urlBase + '/search/' + query)
 		.success(function (data) {
-			console.log(data);
 			defer.resolve(data);
 		})
 		.error(function (err) {
@@ -43,16 +42,24 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 
 		return defer.promise;
 	};
+
+	dataFactory.getCatagory = function (cat) {
+		var defer = $q.defer();
+		$http.get(urlBase + '/catagory/' + cat)
+		.success(function (data) {
+			defer.resolve(data);
+		})
+		.error(function (err) {
+			defer.reject(err);
+		});
+		return defer.promise;
+	};
 	//
-	// dataFactory.getCatagory = function functionName() {
+	// dataFactory.insertStream = function () {
 	//
 	// };
 	//
-	// dataFactory.insertStream = function functionName() {
-	//
-	// };
-	//
-	// dataFactory.removeStream = function functionName() {
+	// dataFactory.removeStream = function () {
 	//
 	// };
 
