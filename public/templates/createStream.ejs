@@ -13,14 +13,13 @@
 
 			<!-- Select Basic -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="selectcat">Select Catagory *</label>
+				<label class="col-md-4 control-label" for="category">Select Category *</label>
 			  	<div class="col-md-4">
-			    	<select id="selectcat" ng-model="stream.cat" name="selectcat" class="form-control">
-				      	<option value="">Football</option>
-				      	<option value="">Basketball</option>
-				      	<option value="">Tennis</option>
-				      	<option value="">Baseball</option>
-				      	<option value="">Rugby</option>
+
+					<select id="selectcat"
+						ng-model="stream.category"
+						class="form-control"
+						ng-options="v for v in options">
 			    	</select>
 			  	</div>
 			</div>
@@ -29,18 +28,18 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="availableOption">Availability</label>
 			  <div class="col-md-4">
-			  <div class="radio">
-			    <label for="availableOption-0">
-			      <input type="radio" name="availableOption" id="availableOption-0" value="1" checked="checked">
-			      Public
-			    </label>
-				</div>
-			  <div class="radio">
-			    <label for="availableOption-1">
-			      <input type="radio" name="availableOption" id="availableOption-1" value="2">
-			      Private
-			    </label>
-				</div>
+				  <div class="radio">
+				    <label for="availableOption-0">
+				      <input type="radio" name="availableOption" id="availableOption-0" ng-model="stream.availibility" value="1" checked="checked">
+				      Public
+				    </label>
+					</div>
+				  <div class="radio">
+				    <label for="availableOption-1">
+				      <input type="radio" name="availableOption" id="availableOption-1" ng-model="stream.availibility" value="2">
+				      Private
+			    	</label>
+					</div>
 			  </div>
 			</div>
 
@@ -48,9 +47,9 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="submitbutton"></label>
 			  <div class="col-md-4">
-				  <a href="#/createstream/{{stream}}">
-					  <button id="submitbutton" name="submitbutton" class="btn btn-primary">Submit</button>
-				  </a>
+
+				  <button id="submitbutton" name="submitbutton"  ng-click="newStream(stream)" class="btn btn-primary">Submit</button>
+
 			  </div>
 			</div>
 

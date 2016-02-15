@@ -8,7 +8,7 @@ function streamController($scope, $routeParams, streamFactory) {
 	function getStream(id) {
 		streamFactory.getStream($routeParams.id)
 		.then(function (data) {			
-			$scope.stream = data;
+			$scope.stream = data[0];
 		})
 		.catch(function (err) {
 			$scope.status = err.message;

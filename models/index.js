@@ -5,9 +5,8 @@ function stream(info) {
 	this.apiKey = info.apiKey;
 	this.token = info.token;
 	this.name = info.name;
-	this.catagory = info.catagory;
-	this.subCatagory = info.subCatagory;
-	this.private = info.private;
+	this.category = info.category;
+	this.availability = info.availability;
 }
 
 // array of streams
@@ -17,34 +16,31 @@ var streams = [
 	    "apiKey": 12,
 	    "token": 123,
 	    "name": 'stream1',
-	    "catagory": "football",
-	    "subCatagory": "sport",
-	    "private": "false"
+	    "category": "football",
+	    "availability": 0
 	},
 	{
 		"sessionId": 212,
 	    "apiKey": 2384238979,
 	    "token": 8324453,
 	    "name": 'stream2',
-	    "catagory": "football",
-	    "subCatagory": "sport",
-	    "private": "false"
+	    "category": "football",
+	    "availability": 1
 	},
 	{
 		"sessionId": 33,
 	    "apiKey": 132048,
 	    "token": 132409,
 	    "name": 'stream3',
-	    "catagory": "football",
-	    "subCatagory": "sport",
-	    "private": "false"
+	    "category": "football",
+	    "availability": 1
 	}
 ];
 
 module.exports.findAllPublicStreams = function() {
 	var result = [];
 	for(var s in streams){
-		if (streams[s].private == "false") {
+		if (streams[s].availability == 1) {
 			result.push(streams[s]);
 		}
 	}
@@ -54,7 +50,7 @@ module.exports.findAllPublicStreams = function() {
 module.exports.findStreamsByCat = function(cat) {
 	var result = [];
 	for(var s in streams){
-		if (streams[s].catagory == cat) {
+		if (streams[s].category == cat) {
 			result.push(streams[s]);
 		}
 	}
@@ -83,6 +79,7 @@ module.exports.findStreamsById = function(id) {
 
 module.exports.newStream = function (info) {
 	var instance = new stream(info);
+	console.log(instance);
 	streams.push(instance);
 	return instance;
 };

@@ -1,3 +1,4 @@
+app.controller('catagoryController', catagoryController);
 function catagoryController ($scope, $routeParams, streamFactory) {
 	console.log('catagoryController');
 	$scope.streams = {};
@@ -16,5 +17,3 @@ function catagoryController ($scope, $routeParams, streamFactory) {
 		});
 	};
 };
-
-app.controller('catagoryController', catagoryController);

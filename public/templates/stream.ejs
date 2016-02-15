@@ -1,7 +1,7 @@
 <div class="search">
 	<div class="container">
 		<!-- Avoid identifing by array -->
-		<h2>{{ stream[0].name }}</h2>
+		<h2>{{ stream.name }}</h2>
 
 		<div class="col-xs-12">
 			<div class="embed-responsive embed-responsive-16by9" id="video-stream">
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="{{stream[0].token}}">
+			<input type="text" class="form-control" placeholder="{{stream.token}}">
 		  	<span class="input-group-btn">
 				<button class="btn btn-default" type="button">
 					<span class="glyphicon glyphicon-copy" aria-hidden="true"></span>

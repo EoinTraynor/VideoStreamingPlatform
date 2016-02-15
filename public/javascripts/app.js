@@ -25,14 +25,14 @@ app.config(function ($routeProvider) {
 	})
 	// display create stream form
 	.when('/createstream', {
-		templateUrl: 'templates/createStream.ejs'
+		templateUrl: 'templates/createStream.ejs',
+		controller: 'createStreamController'
 	})
 	// send POST request to create new stream
-	.when('/createstream/:obj', {
-		controller: 'createStreamController',
-		templateUrl: 'templates/createStream.ejs'
-		//redirectTo: 'templates/stream.ejs'
-	})
+	// .when('/createstream/:obj', {
+	// 	templateUrl: 'templates/createStream.ejs'
+	// 	//redirectTo: 'templates/stream.ejs'
+	// })
 	.otherwise({
       redirectTo: '/'
     });
