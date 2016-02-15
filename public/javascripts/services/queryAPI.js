@@ -54,10 +54,18 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		});
 		return defer.promise;
 	};
-	//
-	// dataFactory.insertStream = function () {
-	//
-	// };
+
+	dataFactory.insertStream = function (obj) {
+		var defer = $q.defer();
+		$http.post('/createstream/' + obj)
+		.success(function (data) {
+			defer.resolve(data);
+		})
+		.error(function (err) {
+			defer.reject(err);
+		});
+		return defer.promise;
+	};
 	//
 	// dataFactory.removeStream = function () {
 	//

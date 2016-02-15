@@ -23,11 +23,16 @@ app.config(function ($routeProvider) {
 		controller: 'catagoryController',
 		templateUrl: 'templates/streams.ejs'
 	})
-	// posting to
-	// .when('/streams', {
-	// 	controller: 'searchController',
-	// 	templateUrl: 'templates/streams.ejs'
-	// })
+	// display create stream form
+	.when('/createstream', {
+		templateUrl: 'templates/createStream.ejs'
+	})
+	// send POST request to create new stream
+	.when('/createstream/:obj', {
+		controller: 'createStreamController',
+		templateUrl: 'templates/createStream.ejs'
+		//redirectTo: 'templates/stream.ejs'
+	})
 	.otherwise({
       redirectTo: '/'
     });

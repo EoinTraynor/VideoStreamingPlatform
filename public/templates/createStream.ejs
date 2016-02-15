@@ -1,0 +1,60 @@
+<div class="new-stream">
+	<div class="container">
+		<h2>New Stream</h2>
+
+		<form class="form-horizontal" method="post">
+			<!-- Text input-->
+			<div class="form-group">
+		  		<label class="col-md-4 control-label" for="streamname">Stream Name *</label>
+		  		<div class="col-md-4">
+		  			<input id="inputname" name="streamname" type="text" ng-model="stream.name" placeholder="e.g. Barcelona vs Liverpool" class="form-control input-md" required="">
+		  		</div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="selectcat">Select Catagory *</label>
+			  	<div class="col-md-4">
+			    	<select id="selectcat" ng-model="stream.cat" name="selectcat" class="form-control">
+				      	<option value="">Football</option>
+				      	<option value="">Basketball</option>
+				      	<option value="">Tennis</option>
+				      	<option value="">Baseball</option>
+				      	<option value="">Rugby</option>
+			    	</select>
+			  	</div>
+			</div>
+
+			<!-- Multiple Radios -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="availableOption">Availability</label>
+			  <div class="col-md-4">
+			  <div class="radio">
+			    <label for="availableOption-0">
+			      <input type="radio" name="availableOption" id="availableOption-0" value="1" checked="checked">
+			      Public
+			    </label>
+				</div>
+			  <div class="radio">
+			    <label for="availableOption-1">
+			      <input type="radio" name="availableOption" id="availableOption-1" value="2">
+			      Private
+			    </label>
+				</div>
+			  </div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="submitbutton"></label>
+			  <div class="col-md-4">
+				  <a href="#/createstream/{{stream}}">
+					  <button id="submitbutton" name="submitbutton" class="btn btn-primary">Submit</button>
+				  </a>
+			  </div>
+			</div>
+
+		</form>
+
+	</div>
+</div>
