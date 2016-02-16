@@ -9,13 +9,11 @@ function createStreamController ($scope, $location, streamFactory) {
 		console.log(stream);
 		console.log(stream.availability);
 		streamFactory.insertStream(stream)
-		.then(function (data) {
-			console.log(data);
-			console.log(data.sessionId);
+		.then(function (data) {			
 			$location.path("/streams/" + data.sessionId);
 		})
 		.catch(function (err) {
-			console.log(data);
+			$scope.status = err.message;
 		});
 
 	};
