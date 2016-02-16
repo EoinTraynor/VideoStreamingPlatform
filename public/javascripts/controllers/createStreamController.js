@@ -1,4 +1,4 @@
-function createStreamController ($scope, $routeParams, streamFactory) {
+function createStreamController ($scope, $location, streamFactory) {
 
 	$scope.options = ['Football', 'Basketball', 'Tennis'];
 
@@ -11,6 +11,8 @@ function createStreamController ($scope, $routeParams, streamFactory) {
 		streamFactory.insertStream(stream)
 		.then(function (data) {
 			console.log(data);
+			console.log(data.sessionId);
+			$location.path("/streams/" + data.sessionId);
 		})
 		.catch(function (err) {
 			console.log(data);
