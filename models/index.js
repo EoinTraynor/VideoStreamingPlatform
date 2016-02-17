@@ -78,8 +78,7 @@ module.exports.findStreamsById = function(id) {
 }
 
 module.exports.newStream = function (info) {
-	var instance = new stream(info);
-	console.log(instance);
+	var instance = new stream(info);	
 	streams.push(instance);
 	return instance;
 };

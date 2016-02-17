@@ -1,5 +1,4 @@
 function streamController($scope, $routeParams, streamFactory) {
-	console.log($routeParams.id);
 	$scope.stream = {};
 
 	// routeParams retrieves the current set of route parameters
@@ -7,7 +6,7 @@ function streamController($scope, $routeParams, streamFactory) {
 
 	function getStream(id) {
 		streamFactory.getStream($routeParams.id)
-		.then(function (data) {			
+		.then(function (data) {
 			$scope.stream = data[0];
 		})
 		.catch(function (err) {

@@ -6,10 +6,8 @@ function createStreamController ($scope, $location, streamFactory) {
 		stream.sessionId = 18;
 		stream.apiKey = 'dslf2i0';
 		stream.token = '3290dcxk';
-		console.log(stream);
-		console.log(stream.availability);
 		streamFactory.insertStream(stream)
-		.then(function (data) {			
+		.then(function (data) {
 			$location.path("/streams/" + data.sessionId);
 		})
 		.catch(function (err) {
