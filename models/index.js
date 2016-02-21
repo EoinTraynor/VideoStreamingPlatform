@@ -1,3 +1,5 @@
+var opentok = require('../opentok/opentokConfig');
+
 // define stream model
 // specify the data attributes
 function stream(info) {
@@ -78,7 +80,10 @@ module.exports.findStreamsById = function(id) {
 }
 
 module.exports.newStream = function (info) {
-	var instance = new stream(info);	
+	//console.log(info);
+	// return data from opentok session creation
+	// push it to the the instance
+	var instance = new stream(info);
 	streams.push(instance);
 	return instance;
 };
@@ -90,4 +95,10 @@ module.exports.deleteStream = function(id) {
 			streams.splice(s, 1);
 		}
 	}
-}
+};
+
+// testing
+module.exports.test = function () {
+	console.log('testing modules');
+	opentok.speak();
+};

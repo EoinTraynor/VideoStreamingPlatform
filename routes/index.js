@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var stream = require('../models/index');
-//var streams = require('../models/streams');
+var opentok = require('../opentok/opentokConfig');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -37,9 +37,7 @@ router.get('/streams/:id', function(req, res){
 //**
 router.post('/streams', function(req, res){
     console.log('Creating a new stream');
-    console.log(req.body);    
     res.json(stream.newStream(req.body));
-    //console.log(res);
 });
 
 /* DELETE a specific stream */
@@ -47,5 +45,14 @@ router.delete('/streams/:id', function(req, res){
     console.log('Deleting a specific stream');
     res.json(stream.deleteStream(req.params.id));
 });
+
+// !!!!! testing stream
+
+router.get('/testingstream', function(req, res) {
+    console.log('router testingstream');
+    stream.test();
+});
+
+// !!!!! testing stream
 
 module.exports = router;
