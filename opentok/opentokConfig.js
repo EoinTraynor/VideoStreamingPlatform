@@ -17,9 +17,7 @@ module.exports.speak = function(callback) {
 
         data.sessionId = sessionId;
         data.apiKey = apiKey;
-        data.token = token;
-        console.log(data);
-
+        data.token = token;        
         callback(data);
 
     });

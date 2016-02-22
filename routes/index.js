@@ -37,7 +37,10 @@ router.get('/streams/:id', function(req, res){
 //**
 router.post('/streams', function(req, res){
     console.log('Creating a new stream');
-    res.json(stream.newStream(req.body));
+    //res.json(stream.newStream(req.body));
+    stream.newStream(req.body, function(instance) {
+        res.json(instance);        
+    });
 });
 
 /* DELETE a specific stream */
