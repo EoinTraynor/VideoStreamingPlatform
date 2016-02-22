@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var stream = require('../models/index');
-var opentok = require('../opentok/opentokConfig');
+//var opentok = require('../opentok/opentokConfig');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -47,9 +47,8 @@ router.delete('/streams/:id', function(req, res){
 });
 
 // !!!!! testing stream
-
+// NO NEED TO TOUCH!!!!
 router.get('/testingstream', function(req, res) {
-    console.log('router testingstream');
     stream.test();
 });
 

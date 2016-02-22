@@ -82,8 +82,14 @@ module.exports.findStreamsById = function(id) {
 module.exports.newStream = function (info) {
 	//console.log(info);
 	// return data from opentok session creation
-	// push it to the the instance
+	var streamGeneration = opentok.speak();
+	// merge the attributes of streamGeneration into info
+	for(var att in streamGeneration){
+		info[att] = streamGeneration[att];
+	}
+	// create instance of new stream
 	var instance = new stream(info);
+	// push to the array of streams
 	streams.push(instance);
 	return instance;
 };
@@ -99,6 +105,6 @@ module.exports.deleteStream = function(id) {
 
 // testing
 module.exports.test = function () {
-	console.log('testing modules');
-	opentok.speak();
+	var streamGeneration = opentok.speak();
+	console.log("streamGeneration =" + streamGeneration);
 };
