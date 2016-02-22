@@ -105,6 +105,7 @@ module.exports.deleteStream = function(id) {
 
 // testing
 module.exports.test = function () {
-	var streamGeneration = opentok.speak();
-	console.log("streamGeneration =" + streamGeneration);
+	var hi = opentok.speak();
+	console.log(hi);
+	//console.log("streamGeneration =" + streamGeneration);
 };
