@@ -57,7 +57,6 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 
 	dataFactory.insertStream = function (obj) {
 		var defer = $q.defer();
-		console.log(obj);
 		$http.post(urlBase, obj)
 		.success(function (data) {
 			defer.resolve(data);

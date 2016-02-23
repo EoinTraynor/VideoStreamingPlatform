@@ -29,7 +29,7 @@ router.get('/streams/search/:query', function(req, res){
 
 /* GET a specific stream */
 router.get('/streams/:id', function(req, res){
-    console.log('Getting all streams by session id');
+    console.log('Getting stream by session id');
     res.json(stream.findStreamsById(req.params.id));
 });
 
@@ -37,9 +37,8 @@ router.get('/streams/:id', function(req, res){
 //**
 router.post('/streams', function(req, res){
     console.log('Creating a new stream');
-    //res.json(stream.newStream(req.body));
     stream.newStream(req.body, function(instance) {
-        res.json(instance);        
+        res.json(instance);
     });
 });
 
@@ -51,9 +50,9 @@ router.delete('/streams/:id', function(req, res){
 
 // !!!!! testing stream
 // NO NEED TO TOUCH!!!!
-router.get('/testingstream', function(req, res) {
-    stream.test();
-});
+// router.get('/testingstream', function(req, res) {
+//     stream.test();
+// });
 
 // !!!!! testing stream
 
