@@ -1,7 +1,8 @@
-<div class="search">
+<div class="stream">
 	<div class="container">
 		<!-- Avoid identifing by array -->
 		<h2>{{ stream.name }}</h2>
+		<small id="streamCount"></small>
 
 		<div class="col-xs-12">
 			<div class="embed-responsive embed-responsive-16by9" id="video-stream">
@@ -12,17 +13,16 @@
 					<source src="http://www.webestools.com/page/media/videoTag/BigBuckBunny.webm" type="video/webm">
 					Your browser does not support the video tag.
 				</video> -->
-			</video>
+			</div>
 		</div>
-
 		<div class="input-group">
-			<input type="text" class="form-control" placeholder="{{stream.token}}">
+			<input id="copyTarget" type="text" class="form-control" value="http://dev.vagrantproject.com:3000/#/streams/{{stream.sessionId}}">
 		  	<span class="input-group-btn">
-				<button class="btn btn-default" type="button">
-					<span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+				<button id="copyButton" data-clipboard-target="#copyTarget" class="btn btn-primary" type="button">
+					<!-- <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> -->
+					Copy
 				</button>
 		  	</span>
-		</div>
-
+		</div>		
 	</div>
 </div>

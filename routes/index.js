@@ -42,18 +42,17 @@ router.post('/streams', function(req, res){
     });
 });
 
+/* PUT to update a stream */
+router.put('/streams/:id', function(req, res) {
+    console.log(req.params.id);
+    stream.updateHostConfirm(req.params.id);
+    res.json({test: "testing"});
+});
+
 /* DELETE a specific stream */
 router.delete('/streams/:id', function(req, res){
     console.log('Deleting a specific stream');
     res.json(stream.deleteStream(req.params.id));
 });
-
-// !!!!! testing stream
-// NO NEED TO TOUCH!!!!
-// router.get('/testingstream', function(req, res) {
-//     stream.test();
-// });
-
-// !!!!! testing stream
 
 module.exports = router;

@@ -3,7 +3,6 @@ function opentokConfig(obj) {
     var sessionId = obj.sessionId;
     var apiKey = obj.apiKey;
     var token = obj.token;
-    var hostIdentified = false;
     var connectionCount=0;
 
     // check if browser supports WebRTC
@@ -13,6 +12,7 @@ function opentokConfig(obj) {
         // new client joins the session
         connectionCreated: function(event) {
             connectionCount++;
+            streamCount(connectionCount);
             console.log("connectionCount " + connectionCount);
         },
         // client leaves the session
@@ -22,6 +22,7 @@ function opentokConfig(obj) {
                 console.log("Your network connection terminated");
             }
             connectionCount--;
+            streamCount(connectionCount);
             console.log("connectionCount " + connectionCount);
         },
         // cliet subscribes to stream
@@ -45,7 +46,7 @@ function opentokConfig(obj) {
 
     session.connect(token, function(err) {
         if (!err) {
-            if (hostIdentified) {
+            if (true) {
                 var publisherProperties = {resolution: '1280x720'};
                 var publisher = OT.initPublisher('video-stream', publisherProperties);
                 session.publish(publisher);
@@ -54,7 +55,8 @@ function opentokConfig(obj) {
                 publisher.on({
                     streamCreated: function(event) {
                         console.log("resolution " + event.stream.videoDimensions.height);
-                        // send request to server to update hostStreamConfirmed
+                        // send AJAX request to server to update hostStreamConfirmed
+                        hostStreamConfirmed(sessionId);
                     },
                     streamDestroyed: function(event) {
                         console.log("publisher stopped recording");
