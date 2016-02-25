@@ -28,7 +28,7 @@ function opentokConfig(obj) {
         streamCreated: function(event) {
             console.log("cliet subscribes to stream");
             session.subscribe(event.stream, 'video-stream', function(err) {
-                if (!err) {console.log("New stream");}
+                if (!err) {console.log("New stream"); fixScreen();}
                 else {console.log("client failed to read stream");}
             });
         },
@@ -49,10 +49,12 @@ function opentokConfig(obj) {
                 var publisherProperties = {resolution: '1280x720'};
                 var publisher = OT.initPublisher('video-stream', publisherProperties);
                 session.publish(publisher);
+                fixScreen();
                 console.log("Publishing Stream");
                 publisher.on({
                     streamCreated: function(event) {
                         console.log("resolution " + event.stream.videoDimensions.height);
+                        // send request to server to update hostStreamConfirmed
                     },
                     streamDestroyed: function(event) {
                         console.log("publisher stopped recording");

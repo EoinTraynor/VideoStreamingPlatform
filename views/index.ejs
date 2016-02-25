@@ -83,10 +83,10 @@
 	</main>
 
 	<script type="text/javascript">
-	$( "OT_publisher" ).load(function() {
+	function fixScreen() {
 		console.log( "ready!" );
-		$( ".OT_publisher" ).css( "position", "none" );
-	});
+		$( "#video-stream" ).removeClass( "OT_publisher OT_subscriber" ).removeAttr("style");		
+	}
 	</script>
 
 	<!-- Modules -->
