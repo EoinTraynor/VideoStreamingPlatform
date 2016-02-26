@@ -17,6 +17,17 @@ function hostStreamConfirmed(id) {
 	});
 }
 
+function removeStream(id) {
+	$.ajax({
+		url: '/streams/' + id,
+		type: 'DELETE',
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	console.log("session id: " + id);
+}
+
 var clipboard = new Clipboard('.btn');
 
 clipboard.on('success', function(e) {

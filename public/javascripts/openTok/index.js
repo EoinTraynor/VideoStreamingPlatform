@@ -1,8 +1,10 @@
 // takes object angular
 function opentokConfig(obj) {
+    console.log(obj);
     var sessionId = obj.sessionId;
     var apiKey = obj.apiKey;
     var token = obj.token;
+    var hostConfirmed = obj.hostConfirmed;
     var connectionCount=0;
 
     // check if browser supports WebRTC
@@ -35,6 +37,7 @@ function opentokConfig(obj) {
         },
         streamDestroyed: function(event) {
             console.log("Stream Destroyed");
+            disconnect();
         },
         sessionDisconnected: function sessionDisconnectedHandler(event) {
             console.log("Session Disconnected");
@@ -46,7 +49,7 @@ function opentokConfig(obj) {
 
     session.connect(token, function(err) {
         if (!err) {
-            if (true) {
+            if (!hostConfirmed) {
                 var publisherProperties = {resolution: '1280x720'};
                 var publisher = OT.initPublisher('video-stream', publisherProperties);
                 session.publish(publisher);
@@ -69,7 +72,9 @@ function opentokConfig(obj) {
     });
 
     function disconnect() {
+        console.log("publisher Disconnected");
         session.disconnect();
+        removeStream(sessionId);
     }
 
 };

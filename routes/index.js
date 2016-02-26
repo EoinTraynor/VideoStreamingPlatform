@@ -46,13 +46,12 @@ router.post('/streams', function(req, res){
 router.put('/streams/:id', function(req, res) {
     console.log(req.params.id);
     stream.updateHostConfirm(req.params.id);
-    res.json({test: "testing"});
 });
 
 /* DELETE a specific stream */
 router.delete('/streams/:id', function(req, res){
     console.log('Deleting a specific stream');
-    res.json(stream.deleteStream(req.params.id));
+    stream.deleteStream(req.params.id);
 });
 
 module.exports = router;
