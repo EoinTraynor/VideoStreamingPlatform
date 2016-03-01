@@ -13,35 +13,7 @@ function stream(info) {
 }
 
 // array of streams
-var streams = [
-	{
-		"sessionId": 11,
-	    "apiKey": 12,
-	    "token": 123,
-	    "name": 'stream1',
-	    "category": "football",
-		"hostConfirmed": false,
-	    "availability": 0
-	},
-	{
-		"sessionId": 212,
-	    "apiKey": 2384238979,
-	    "token": 8324453,
-	    "name": 'stream2',
-	    "category": "football",
-		"hostConfirmed": false,
-	    "availability": 1
-	},
-	{
-		"sessionId": 33,
-	    "apiKey": 132048,
-	    "token": 132409,
-	    "name": 'stream3',
-	    "category": "football",
-		"hostConfirmed": true,
-	    "availability": 1
-	}
-];
+var streams = [];
 
 module.exports.findAllPublicStreams = function() {
 	var result = [];
