@@ -14,9 +14,13 @@ body {
 /* Main-Nav*/
 /* Position elements in div*/
 #main-nav {
-    height: 65px;
+    height: 60px;
     line-height: 35px;
-    padding-top: 15px;
+    padding-top: 13px;
+    background-color: #2D3E50;
+
+    /*background-color: #34495e;*/
+    border-style: none;
 }
 
 #nav-icon {
@@ -24,12 +28,18 @@ body {
 }
 
 #nav-icon .glyphicon{
+    font-size: 17px;
     top: 5px;
+    color: #FBFBFB;
 }
 
 #main-nav .input-group {
     padding: 0px 10px;
     max-width: 400px;
+}
+
+.glyphicon-search{
+    color: #2D3E50;
 }
 
 /* Sub-Nav*/
@@ -40,6 +50,20 @@ body {
 
 #sub-nav {
     min-height: 47px;
+    background-color: #ecf0f1;
+    /*background-color: #DC7563;*/
+    /*background-color: #FC4349;*/
+}
+
+#sub-nav a{
+    text-decoration: none;
+    color: #2980b9;
+    /*color: #D7DADB;*/
+    /*color: #FBFBFB;*/
+}
+
+#sub-nav .element{
+    /*border-bottom: 3px solid #2980b9;*/
 }
 
 #sub-nav .glyphicon{
@@ -53,6 +77,21 @@ body {
 #video-stream {
     margin-bottom: 20px;
 }
+
+.display h1{
+    color: #2D3E50;
+    font-size: 2em;
+}
+
+.display table{
+    margin-top: 30px;
+    color: #2D3E50;
+}
+
+.display form{
+    margin-top: 30px;
+}
+
 /*  MAIN CONTAINER END */
 
 

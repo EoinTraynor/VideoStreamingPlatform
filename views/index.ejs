@@ -3,12 +3,12 @@
 <head>
 	<title>VideoStreamingPlatform</title>
 	<!-- Personal javascript -->
-	<script type="text/javascript" src="javascripts/myApp.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
 	<script type="text/javascript" src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="javascripts/myApp.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -20,7 +20,7 @@
 			<div class="row">
 
 
-				<div class="col-xs-3 bg-warning">
+				<div class="col-xs-3">
 					<div class="center-children">
 						<a class="navbar-brand" id="nav-icon" href="#/createstream">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -28,7 +28,7 @@
 					</div>
 				</div>
 
-				<div class="col-xs-9 col-sm-6 col-sm-offset-3 bg-info">
+				<div class="col-xs-9 col-sm-6 col-sm-offset-3">
 					<div class="center-children">
 						<div class="input-group center-me">
 							<input type="text" class="form-control" placeholder="Search" name="search" ng-model="search.text">
@@ -52,22 +52,22 @@
 	<div class="navbar navbar-default navbar-static-top" id="sub-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-3 bg-warning">
+				<div class="col-xs-3 element">
 					<div class="center-children">
-						<a href="#/streams"><h2>All Streams</h2></a>
+						<a href="#/streams"><h2>All</h2></a>
 					</div>
 				</div>
-				<div class="col-xs-3 bg-info">
+				<div class="col-xs-3 element">
 					<div class="center-children">
 						<a href="#/streams/catagory/football"><h2>Football</h2></a>
 					</div>
 				</div>
-				<div class="col-xs-3 bg-danger">
+				<div class="col-xs-3 element">
 					<div class="center-children">
 						<a href="#/streams/catagory/basketball"><h2>Basketball</h2></a>
 					</div>
 				</div>
-				<div class="col-xs-3 bg-info">
+				<div class="col-xs-3 element">
 					<div class="center-children">
 						<a href="#"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></a>
 					</div>

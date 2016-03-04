@@ -13,7 +13,44 @@ function stream(info) {
 }
 
 // array of streams
-var streams = [];
+var streams = [
+	{
+ 		"sessionId": 11,
+ 	    "apiKey": 12,
+ 	    "token": 123,
+ 	    "name": 'Liverpool vs Barcelona',
+ 	    "category": "Football",
+ 		"hostConfirmed": true,
+ 	    "availability": 1
+ 	},
+ 	{
+ 		"sessionId": 212,
+ 	    "apiKey": 2384238979,
+	    "token": 8324453,
+ 	    "name": 'Chelsea vs Arsenal',
+ 	    "category": "Football",
+ 		"hostConfirmed": true,
+ 	    "availability": 1
+ 	},
+	{
+ 		"sessionId": 33,
+ 	    "apiKey": 132048,
+ 	    "token": 132409,
+ 	    "name": 'LA Lakers vs Chicago Bulls',
+ 	    "category": "Basketball",
+ 		"hostConfirmed": true,
+ 	    "availability": 1
+ 	},
+	{
+ 		"sessionId": 33,
+ 	    "apiKey": 132048,
+ 	    "token": 132409,
+ 	    "name": 'Ireland vs Italy',
+ 	    "category": "Rugby",
+ 		"hostConfirmed": true,
+ 	    "availability": 1
+ 	}
+];
 
 module.exports.findAllPublicStreams = function() {
 	var result = [];
