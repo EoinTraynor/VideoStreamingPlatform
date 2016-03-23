@@ -6,9 +6,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
 	<script type="text/javascript" src="https://static.opentok.com/v2/js/opentok.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="javascripts/myApp.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -59,12 +57,12 @@
 				</div>
 				<div class="col-xs-3 element">
 					<div class="center-children">
-						<a href="#/streams/catagory/football"><h2>Football</h2></a>
+						<a href="#/streams/category/football"><h2>Football</h2></a>
 					</div>
 				</div>
 				<div class="col-xs-3 element">
 					<div class="center-children">
-						<a href="#/streams/catagory/basketball"><h2>Basketball</h2></a>
+						<a href="#/streams/category/basketball"><h2>Basketball</h2></a>
 					</div>
 				</div>
 				<div class="col-xs-3 element">
@@ -76,7 +74,6 @@
 		</div>
 	</div>
 
-
 	<!-- Main content and Injected Views -->
 	<main ng-controller="mainController">
 		<!-- angular templating -->
@@ -85,6 +82,7 @@
 
 	</main>
 
+	<!-- Angular -->
 	<!-- Modules -->
 	<!-- Handle routes -->
 	<script type="text/javascript" src="javascripts/app.js"></script>
@@ -93,7 +91,7 @@
 	<script type="text/javascript" src="javascripts/controllers/mainController.js"></script>
 	<script type="text/javascript" src="javascripts/controllers/getStreamController.js"></script>
 	<script type="text/javascript" src="javascripts/controllers/searchController.js"></script>
-	<script type="text/javascript" src="javascripts/controllers/catagoryController.js"></script>
+	<script type="text/javascript" src="javascripts/controllers/categoryController.js"></script>
 	<script type="text/javascript" src="javascripts/controllers/createStreamController.js"></script>
 	<!-- Services -->
 	<!-- Make the request to the server -->
@@ -101,5 +99,12 @@
 
 	<!-- OpenTok Config -->
 	<script type="text/javascript" src="javascripts/opentok/index.js"></script>
+
+	<!-- Clipboard Config -->
+	<!-- Needs to load after dom -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
+
+	<!-- Additional app javascript -->
+	<script type="text/javascript" src="javascripts/myApp.js"></script>
 </body>
 </html>

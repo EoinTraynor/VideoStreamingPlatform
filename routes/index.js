@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 var stream = require('../models/index');
-//var opentok = require('../opentok/opentokConfig');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,11 +13,11 @@ router.get('/streams', function(req, res){
     res.json(stream.findAllPublicStreams());
 });
 
-/* GET a json of strams relating to a specific catagory */
+/* GET a json of strams relating to a specific category */
 //**
-router.get('/streams/catagory/:catagory', function(req, res){
-    console.log('Getting streams relating to specific catagory');
-    res.json(stream.findStreamsByCat(req.params.catagory));
+router.get('/streams/category/:category', function(req, res){
+    console.log('Getting streams relating to specific category');
+    res.json(stream.findStreamsByCat(req.params.category));    
 });
 
 /* GET a list strams relating to a specific search */

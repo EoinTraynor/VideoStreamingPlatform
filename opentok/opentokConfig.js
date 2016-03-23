@@ -17,23 +17,8 @@ module.exports.speak = function(callback) {
 
         data.sessionId = sessionId;
         data.apiKey = apiKey;
-        data.token = token;        
+        data.token = token;
         callback(data);
 
     });
-
-    // var obj = function(dataObj) {
-    //     console.log("dataObj = "+ dataObj);
-    //     return dataObj;
-    // };
-    //
-    // callback(obj);
 };
-
-
-// var sessionId = function(arg) {
-//     console.log(arg);
-//     createToken();
-//     return arg;
-// }
-// var token = opentok.generateToken(sessionId);

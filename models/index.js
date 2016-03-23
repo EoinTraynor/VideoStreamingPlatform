@@ -28,7 +28,7 @@ var streams = [
  	    "apiKey": 2384238979,
 	    "token": 8324453,
  	    "name": 'Chelsea vs Arsenal',
- 	    "category": "Football",
+ 	    "category": "football",
  		"hostConfirmed": true,
  	    "availability": 1
  	},
@@ -52,6 +52,7 @@ var streams = [
  	}
 ];
 
+// filter through array of streams and all active public streams
 module.exports.findAllPublicStreams = function() {
 	var result = [];
 	for(var s in streams){
@@ -65,18 +66,25 @@ module.exports.findAllPublicStreams = function() {
 module.exports.findStreamsByCat = function(cat) {
 	var result = [];
 	for(var s in streams){
-		if (streams[s].availability == 1 && streams[s].hostConfirmed == true && streams[s].category == cat) {
+		if (streams[s].availability == 1 &&
+			streams[s].hostConfirmed == true &&
+			streams[s].category.toLowerCase() == cat.toLowerCase()) {
 			result.push(streams[s]);
 		}
 	}
+	console.log(result);
 	return result;
 }
 
+// loop through array of streams and return all active public streams
+// matching the given search term
 module.exports.findStreamsByName = function(name) {
 	var result = [];
 	for(var s in streams){
-		if (streams[s].availability == 1 && streams[s].hostConfirmed == true && streams[s].name == name) {
-			result.push(streams[s]);
+		if (streams[s].availability == 1 &&
+			streams[s].hostConfirmed == true &&
+			streams[s].name == name) {
+				result.push(streams[s]);
 		}
 	}
 	return result;

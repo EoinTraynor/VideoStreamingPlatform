@@ -43,9 +43,9 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		return defer.promise;
 	};
 
-	dataFactory.getCatagory = function (cat) {
+	dataFactory.getCategory = function (cat) {
 		var defer = $q.defer();
-		$http.get(urlBase + '/catagory/' + cat)
+		$http.get(urlBase + '/category/' + cat)
 		.success(function (data) {
 			defer.resolve(data);
 		})
@@ -66,10 +66,6 @@ app.factory('streamFactory', ['$http', '$q', function($http, $q) {
 		});
 		return defer.promise;
 	};
-	//
-	// dataFactory.removeStream = function () {
-	//
-	// };
 
 	return dataFactory;
 }]);

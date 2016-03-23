@@ -18,9 +18,9 @@ app.config(function ($routeProvider) {
 		controller: 'searchController',
 		templateUrl: 'templates/streams.ejs'
 	})
-	// filter streams based on catagory identifier
-	.when('/streams/catagory/:catagory', {
-		controller: 'catagoryController',
+	// filter streams based on category identifier
+	.when('/streams/category/:category', {
+		controller: 'categoryController',
 		templateUrl: 'templates/streams.ejs'
 	})
 	// display create stream form
@@ -28,11 +28,6 @@ app.config(function ($routeProvider) {
 		templateUrl: 'templates/createStream.ejs',
 		controller: 'createStreamController'
 	})
-	// send POST request to create new stream
-	// .when('/createstream/:obj', {
-	// 	templateUrl: 'templates/createStream.ejs'
-	// 	//redirectTo: 'templates/stream.ejs'
-	// })
 	.otherwise({
       redirectTo: '/'
     });
