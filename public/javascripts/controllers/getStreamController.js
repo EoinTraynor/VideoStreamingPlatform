@@ -2,6 +2,7 @@ function streamController($scope, $routeParams, streamFactory) {
 	$scope.stream = {};
 
 	// routeParams retrieves the current set of route parameters
+	// need to pass url:id
 	getStream($routeParams.id);
 
 	function getStream(id) {
