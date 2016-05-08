@@ -1,7 +1,7 @@
 // // opentok setup config
 var OpenTok = require('opentok');
-var apiKey = 45501232;
-var apiSecret = '3eb87aa951206f0d74e12cbe3fb3eb14ea58f38a';
+var apiKey = 45585712;
+var apiSecret = 'a7a30db65bd6ba166b4eca4f5ca1bdced79c3a2b';
 var opentok = new OpenTok(apiKey, apiSecret);
 
 module.exports.speak = function(callback) {
