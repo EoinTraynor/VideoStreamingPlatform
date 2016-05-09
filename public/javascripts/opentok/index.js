@@ -76,5 +76,4 @@ function opentokConfig(obj) {
         session.disconnect();
         removeStream(sessionId);
     }
-
 };

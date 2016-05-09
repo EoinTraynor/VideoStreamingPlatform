@@ -8,4 +8,5 @@ function mainController ($scope, streamFactory) {
 		$scope.status = err.message;
 	});
 };
+
 app.controller('mainController', mainController);
